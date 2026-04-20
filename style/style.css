@@ -1,0 +1,239 @@
+body {
+  background-image: url(../img/fon.jpg);
+
+}
+
+.header{
+  padding: 20px 0 50px;
+  max-width: 412px;
+  margin: auto;
+}
+
+.main{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.kursiv{
+  font-family: var(--kursiv-text);
+  font-weight: 400;
+  text-align: center;
+  font-size: 64px;
+}
+
+.card {
+  max-width: 380px;
+  width: 100%;
+  background: #ffffff;
+  border-radius: 2rem;
+  box-shadow:
+    0 25px 45px -12px rgba(0, 0, 0, 0.25),
+    0 8px 18px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+  cursor: pointer;
+  backdrop-filter: blur(0px);
+}
+
+/* легкое поднятие при наведении — карточка "живая" */
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 30px 50px -14px rgba(0, 0, 0, 0.3);
+}
+
+/* контейнер для картинки — именно в нём лежит макет */
+.card-preview {
+  position: relative;
+  background: #f0f2f5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  transition: background 0.2s;
+}
+
+/* само изображение макета — аккуратное, с округлением снизу/сверху */
+.card-preview img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 1.2rem;
+  transition:
+    transform 0.25s cubic-bezier(0.2, 0.9, 0.4, 1.1),
+    filter 0.2s;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  object-fit: cover;
+}
+
+/* маленький эффект при наведении на картинку — масштаб + легкое свечение */
+.card:hover .card-preview img {
+  transform: scale(1.01);
+  filter: brightness(1.02);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+/* Нижняя часть карточки — подпись / действие */
+.card-info {
+  padding: 1.4rem 1.5rem 1.8rem 1.5rem;
+  text-align: center;
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+  background: white;
+}
+
+.card-info h3 {
+  font-size: 1.55rem;
+  font-weight: 600;
+  letter-spacing: -0.3px;
+  color: #1f2a44;
+  margin-bottom: 0.4rem;
+}
+
+.card-info p {
+  font-size: 0.9rem;
+  color: #5b6b8c;
+  margin-bottom: 1rem;
+  line-height: 1.4;
+}
+
+.hint {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #f0f4fe;
+  padding: 0.5rem 1.2rem;
+  border-radius: 60px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #2c3e8f;
+  transition: background 0.2s;
+}
+
+.hint svg {
+  width: 18px;
+  height: 18px;
+  stroke: #2c3e8f;
+  stroke-width: 1.8;
+  fill: none;
+}
+
+.card:hover .hint {
+  background: #e6edff;
+}
+
+/* МОДАЛЬНОЕ ОКНО — просмотр макета поближе */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(12px);
+  z-index: 1000;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+  opacity: 0;
+}
+
+.modal.show {
+  display: flex;
+  opacity: 1;
+}
+
+/* контейнер для увеличенного макета */
+.modal-content {
+  max-width: 90vw;
+  max-height: 90vh;
+  background: transparent;
+  border-radius: 2rem;
+  overflow: hidden;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
+  animation: zoomIn 0.25s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+  cursor: default;
+}
+
+.modal-content img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 1.5rem;
+  background: #fff;
+  object-fit: contain;
+  max-height: 85vh;
+}
+
+/* кнопка закрытия (крестик) */
+.closeModalBtn{
+  position: absolute;
+  top: 1.8rem;
+  right: 2rem;
+  background: transparent;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  font-weight: 300;
+  color: white;
+  cursor: pointer;
+  transition: 0.2s;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  font-family: monospace;
+}
+
+.closeModalBtn:hover {
+  background: rgba(223, 216, 216, 0.8);
+  transform: scale(1.05);
+  border-color: transparent;
+}
+
+/* анимация появления */
+@keyframes zoomIn {
+  from {
+    transform: scale(0.92);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* адаптивность */
+@media (max-width: 500px) {
+  .card {
+    max-width: 320px;
+  }
+  .card-info h3 {
+    font-size: 1.35rem;
+  }
+  .close-modal {
+    top: 1rem;
+    right: 1rem;
+    width: 40px;
+    height: 40px;
+    font-size: 1.8rem;
+  }
+}
+
+/* дополнительный текст для удобства */
+.instruction {
+  margin-top: 2rem;
+  font-size: 0.85rem;
+  text-align: center;
+  color: #4a5b7a;
+  background: rgba(255, 255, 240, 0.6);
+  padding: 0.6rem 1rem;
+  border-radius: 40px;
+  backdrop-filter: blur(4px);
+}
