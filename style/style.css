@@ -24,17 +24,32 @@ body {
   font-family: var(--kursiv-text);
   font-weight: 400;
   text-align: left;
-  font-size: 34px;
+  font-size: 40px;
   color: var(--color-text);
 }
 
 .title {
   font-family: var(--main-text);
-  font-size: 25px;
+  font-size: 27px;
   text-align: right;
-  color: #512B12;
-  padding-left: 155px;
+  color: var(--main-color);
+  padding-left: 202px;
   margin-top: -9px;
+}
+
+.cat{
+  margin: 20px 0;
+}
+
+.box-img{
+  display: flex;
+  align-items: start;
+  justify-content: start;
+  max-width: 412px;
+}
+
+.cate{
+  margin-left: 64px;
 }
 
 .card {
@@ -253,15 +268,28 @@ body {
 .footer {
   margin-top: 20px;
   padding: 10px 0;
-  color: var(--color-text);
+  color: var(--main-color);
   text-align: center;
 }
 
 .line {
   height: 1px;
   width: 100%;
-  background-color: var(--color-text);
+  background-color: var(--main-color);
   display: block;
+}
+
+.masseg{
+  position: relative;
+  padding-right: 50px;
+}
+
+.masseg-title{
+  position: absolute;
+  top: 47px;
+  left: 50px;
+  font-size: 16px;
+  font-family: var(--main-text);
 }
 
 .list {
@@ -271,7 +299,7 @@ body {
   justify-content: center;
   gap: 10px;
   list-style: none;
-  color: var(--color-text);
+  color: var(--main-color);
 }
 
 .href {
