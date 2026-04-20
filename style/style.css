@@ -242,6 +242,7 @@ body {
 
 
 .footer{
+  margin-top: 20px;
   padding: 10px 0;
   color: var(--color-text);
   text-align: center;
