@@ -1,6 +1,7 @@
 body {
   background-image: url(../img/fon.jpg);
-
+  max-width: 412px;
+  margin: auto;
 }
 
 .header{
@@ -22,6 +23,7 @@ body {
   font-weight: 400;
   text-align: center;
   font-size: 64px;
+  color: var(--color-text);
 }
 
 .card {
@@ -236,4 +238,32 @@ body {
   padding: 0.6rem 1rem;
   border-radius: 40px;
   backdrop-filter: blur(4px);
+}
+
+
+.footer{
+  padding: 10px 0;
+  color: var(--color-text);
+  text-align: center;
+}
+
+.line{
+ height: 1px;
+ width: 100%;
+ background-color: var(--color-text);
+ display: block;
+}
+
+.list{
+  padding: 10px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  list-style: none;
+  color: var(--color-text);
+}
+
+.href{
+  text-decoration: none;
 }
