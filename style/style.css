@@ -154,7 +154,6 @@ body {
   max-width: 90vw;
   max-height: 90vh;
   background: transparent;
-  border-radius: 2rem;
   overflow: hidden;
   box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
   animation: zoomIn 0.25s cubic-bezier(0.2, 0.9, 0.4, 1.1);
@@ -165,7 +164,7 @@ body {
   width: 100%;
   height: auto;
   display: block;
-  border-radius: 1.5rem;
+  border-radius: 3px;
   background: #fff;
   object-fit: contain;
   max-height: 85vh;
