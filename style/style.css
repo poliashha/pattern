@@ -1,15 +1,18 @@
 body {
   background-image: url(../img/fon.jpg);
-  
 }
 
-.header{
-  padding: 20px 0 50px;
+.header {
+  padding: 20px 0;
   max-width: 412px;
   margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
-.main{
+.main {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -17,12 +20,21 @@ body {
   gap: 30px;
 }
 
-.kursiv{
+.kursiv {
   font-family: var(--kursiv-text);
   font-weight: 400;
-  text-align: center;
-  font-size: 64px;
+  text-align: left;
+  font-size: 34px;
   color: var(--color-text);
+}
+
+.title {
+  font-family: var(--main-text);
+  font-size: 25px;
+  text-align: right;
+  color: #512B12;
+  padding-left: 155px;
+  margin-top: -9px;
 }
 
 .card {
@@ -171,7 +183,7 @@ body {
 }
 
 /* кнопка закрытия (крестик) */
-.closeModalBtn{
+.closeModalBtn {
   position: absolute;
   top: 1.8rem;
   right: 2rem;
@@ -238,22 +250,21 @@ body {
   backdrop-filter: blur(4px);
 }
 
-
-.footer{
+.footer {
   margin-top: 20px;
   padding: 10px 0;
   color: var(--color-text);
   text-align: center;
 }
 
-.line{
- height: 1px;
- width: 100%;
- background-color: var(--color-text);
- display: block;
+.line {
+  height: 1px;
+  width: 100%;
+  background-color: var(--color-text);
+  display: block;
 }
 
-.list{
+.list {
   padding: 10px 0;
   display: flex;
   align-items: center;
@@ -263,6 +274,6 @@ body {
   color: var(--color-text);
 }
 
-.href{
+.href {
   text-decoration: none;
 }
