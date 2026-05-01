@@ -63,3 +63,25 @@
 
   
 })();
+
+document.addEventListener("DOMContentLoaded", function () {
+  const container = document.getElementById("introContainer");
+
+  // Общее время анимации: 4s (slide-out-container) + 2.8s (задержка) = 6.8s
+  // Добавляем небольшой запас 0.2s
+  setTimeout(function () {
+    if (container) {
+      // Плавно скрываем контейнер
+      container.style.opacity = "0";
+      container.style.transition = "opacity 0.8s ease";
+
+      // Удаляем контейнер из DOM после завершения анимации
+      setTimeout(function () {
+        if (container && container.parentNode) {
+          container.style.display = "none";
+          // Или полностью удаляем: container.remove();
+        }
+      }, 400);
+    }
+  }, 6800); // 6.8 секунд
+});
