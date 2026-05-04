@@ -1,5 +1,3 @@
-
-
 .header {
   padding: 20px 0;
   max-width: 412px;
@@ -35,18 +33,18 @@
   margin-top: -9px;
 }
 
-.cat{
+.cat {
   margin: 20px 0;
 }
 
-.box-img{
+.box-img {
   display: flex;
   align-items: start;
   justify-content: start;
   max-width: 412px;
 }
 
-.cate{
+.cate {
   margin-left: 64px;
 }
 
@@ -64,7 +62,123 @@
     box-shadow 0.2s ease;
   cursor: pointer;
   backdrop-filter: blur(0px);
+  overflow: hidden;
+  transition: all 0.3s ease;
 }
+
+.load-more-container {
+  text-align: center;
+  margin-top: -30px;
+}
+
+.load-more-btn {
+  border: none;
+  padding: 10px 42px;
+  font-size: 1rem;
+  font-weight: 600;
+  font-family: inherit;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  letter-spacing: 1px;
+  margin-top: 30px;
+  
+  /* Сплошной фон кнопки */
+  background: #d4a373;
+  color: transparent;
+  
+  /* Градиент для текста */
+  background-image: linear-gradient(
+    90deg,
+    #690a0a,
+    #690a0a,
+    #b99c9c,
+    #7a0505,
+    #690a0a
+  );
+  background-size: 200% auto;
+  background-clip: text;
+  -webkit-background-clip: text;
+  
+  /* Анимация текста */
+  animation: shimmerText 2.5s linear infinite;
+}
+
+/* Ключевые кадры для анимации текста */
+@keyframes shimmerText {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 200% 0%;
+  }
+}
+
+/* Эффект при наведении */
+.load-more-btn:hover {
+  transform: scale(1.02);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  animation: shimmerText 1.5s linear infinite;
+}
+
+/* Эффект при клике */
+.load-more-btn:active {
+  transform: scale(0.98);
+}
+
+
+/* Модальное окно (увеличенное изображение) */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  z-index: 10000;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.modal-content {
+  max-width: 85%;
+  max-height: 85%;
+}
+
+.modalImg {
+  width: 100%;
+  height: auto;
+  max-height: 85vh;
+  object-fit: contain;
+  border-radius: 12px;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+}
+
+.closeModalBtn {
+  position: absolute;
+  top: 20px;
+  right: 35px;
+  font-size: 45px;
+  font-weight: bold;
+  color: #fff;
+  cursor: pointer;
+  transition: 0.2s;
+  font-family: monospace;
+}
+
+.closeModalBtn:hover {
+  color: #d4a373;
+}
+
+/* Скрытые карточки */
+.article.hidden {
+  display: none;
+  
+}
+
 
 /* легкое поднятие при наведении — карточка "живая" */
 .card:hover {
@@ -222,6 +336,14 @@
   border-color: transparent;
 }
 
+.conteiner-card{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-direction: column;
+  gap: 30px;
+}
+
 /* анимация появления */
 @keyframes zoomIn {
   from {
@@ -277,12 +399,12 @@
   display: block;
 }
 
-.masseg{
+.masseg {
   position: relative;
   padding-right: 50px;
 }
 
-.masseg-title{
+.masseg-title {
   position: absolute;
   top: 47px;
   left: 50px;
