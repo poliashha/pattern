@@ -239,7 +239,7 @@
   border: 1px solid var(--main-color);
   background-color: var(--beige-text);
   text-transform: uppercase;
-  
+  font-size: 25px;
 }
 
 .box-img{
