@@ -1,28 +1,18 @@
 @font-face {
-  font-family: 'GentiumPlus';
+  font-family: 'Cabin';
   src:
-    url("./GentiumPlus.woff2") format("woff2"),
-    url("./GentiumPlus.woff") format("woff");
+    url("./Cabin-Italic.woff2") format("woff2"),
+    url("./Cabin-Italic.woff") format("woff");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'Bickham-Script-One';
+  font-family: 'PoiretOne';
   src:
-    url("./inglobali.woff2") format("woff2"),
-    url("./inglobal.woff") format("woff");
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Montserrat';
-  src:
-    url("Montserrat-Regular.woff2") format("woff2"),
-    url("Montserrat-Regular.woff") format("woff");
+    url("./PoiretOne-Regular.woff2") format("woff2"),
+    url("./PoiretOne-Regular.woff") format("woff");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
