@@ -32,3 +32,7 @@ input {
   font-family: inherit;
   font-size: inherit;
 }
+
+html {
+  scroll-behavior: smooth; 
+}
